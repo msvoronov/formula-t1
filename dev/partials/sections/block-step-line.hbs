@@ -1,0 +1,29 @@
+<section class="section block-step-line js-resize-line">
+  <div class="container">
+    <h2 class="section__title">{{title}}</h2>
+    <div class="block-step-line__wrap js-line">
+      <div class="block-step-line__line">
+        {{#each list}}
+          <div class="block-step-line__line__bullet-wrap">
+            <div class="block-step-line__line__bullet-wrap__bullet">
+              <div class="block-step-line__line__bullet-wrap__info-wrap">
+                <div class="block-step-line__line__bullet-wrap__info-wrap__title">{{title}}</div>
+                <div class="block-step-line__line__bullet-wrap__info-wrap__date">{{date}}</div>
+              </div>
+              <div class="block-step-line__line__bullet-wrap__info-wrap-hover js-hover-wrap">
+                <div class="block-step-line__line__bullet-wrap__info-wrap-hover__date">{{date}}</div>
+                {{#if secondTitle}}
+                <div class="block-step-line__line__bullet-wrap__info-wrap-hover__title">{{secondTitle}}</div>
+                {{else}}
+                <div class="block-step-line__line__bullet-wrap__info-wrap-hover__title">{{title}}</div>
+                {{/if}}
+                <div class="block-step-line__line__bullet-wrap__info-wrap-hover__descr">{{{descr}}}</div>
+              </div>
+
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

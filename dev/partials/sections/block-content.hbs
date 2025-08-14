@@ -1,0 +1,101 @@
+<section class="section block-content">
+  <div class="container">
+    {{#each sections}}
+    <div class="block-content__container">
+      <h3 class="block-content__title" id="{{id}}">{{blockTitle}}</h3>
+      <div class="block-content__wrap js-vote" data-modal="{{id}}">
+        {{#each list}}
+          <div class="block-content__item js-modal-content js-vote-project">
+            <div class="block-content__item__title">
+              <span class="js-project-name">
+              {{itemTitle}}
+              </span>
+
+              {{#if hasVote}}
+              <div class="block-content__item__counter js-counter" data-value="999">
+                <div class="block-content__item__counter-wrap js-counter-wrap">
+                  {{{getSvg src='votes-icon'}}}
+                </div>
+                <div class="block-content__item__counter-trigger js-vote-trigger" data-id="{{name}}-{{@key}}" onclick="showModal('proekty-dlya-vneshney-auditorii')">
+                  <div class="block-content__item__counter-trigger__wrap">
+
+                  <span class="block-content__item__counter-trigger__text block-content__item__counter-trigger__text--cur">Отдать голос</span>
+                  <span class="block-content__item__counter-trigger__text block-content__item__counter-trigger__text--next">
+                    Голос учтён 
+                    {{{getSvg src="checked-icon"}}}
+                  </span>
+                  </div>
+                </div>
+              </div>
+              {{/if}}
+                
+            </div>
+            <div class="block-content__item__person">
+              <div class="block-content__item__img js-person-img">
+                <img src="https://team.t1.ru/api/file-service/user/3a0bae68-282a-568c-6b10-e9f52dae541f/avatar?size=thumb" alt="image">
+              </div>
+              <div class="block-content__item__info">
+                <div class="block-content__item__name js-person-name">{{name}}</div>
+                <div class="block-content__item__position js-person-position">{{position}}</div>
+              </div>
+            </div>
+            <p class="block-content__item__text js-text-content">
+              {{{text}}}
+            </p>
+            <div class="block-content__item__bot">
+              <a href="{{href}}" class="block-content__item__tag">
+                Видео о проекте
+                {{{getSvg src='arrow-right'}}}
+              </a>
+              <div class="block-content__item__more js-open-modal" data-target="{{target}}">
+                {{{getSvg src='info-icon'}}}
+                Подробнее
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</section>
+
+<script>
+  /**
+  voteId - уникальный идентификатор голосовалки. 
+
+  Он должен в атрибуте data-modal="{{voteId}} на элементе js-vote
+  И в попапе для результата голосования vote-modal в поле id="{{voteId}}"
+  
+  */
+
+  const showModal = (id) => {
+
+    const modalWrap = document.querySelector('.js-vote-modal-wrap');
+    const modalElement = modalWrap.querySelector(`#${id}`);
+
+    const btn = modalElement.querySelector('.vote-modal__btn');
+
+    const timer1 = setTimeout(() => {
+      modalElement.classList.add('active');
+    }, 30);
+
+    const timer2 = setTimeout(() => {
+      modalElement.classList.remove('active');
+    }, 3000);
+
+    btn.addEventListener("click", () => {
+
+      //Отчищает таймеры, скрывает модалку. Тут можно добавить любую необходимую логику при нажатии на кнопку. 
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+
+      closeModal(modalElement);
+    }, { once: true });
+
+  }
+
+  const closeModal = (modalElement) => {
+    modalElement.classList.remove('active');
+  };
+</script>

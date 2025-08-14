@@ -1,0 +1,133 @@
+$block-name: "block-accordion";
+
+.#{$block-name} {
+
+  a {
+    text-decoration: unset !important;
+  }
+
+  &__wrap {
+    @include flex(column, $gap: 8px);
+    @include max-size(66%);
+    
+    @include media-max-md() {
+      @include max-size(100%);
+    }
+  }
+
+  &__descr {
+    @include font-size(0.8rem, 1.4, 500);
+
+    letter-spacing: -0.48px;
+
+    @include media-max-md() {
+      @include font-size(1rem, 1.4, 500);
+      letter-spacing: -0.28px;
+    }
+  }
+
+  &__accord {
+    @include size(100%);
+    @include bg-color($gray-light);
+    @include transition(background-color);
+
+    @include hover() {
+      @include bg-color($gray-light-2);
+    }
+
+    border-radius: 16px;
+
+    @include media-max-md() {
+      border-radius: 8px;
+    }
+  }
+
+  &__trigger {
+    @include font-size(1rem, 1.4, 500);
+
+    letter-spacing: -0.6px;
+    border-radius: 16px;
+    padding: 16px;
+
+    @include media-max-md() {
+      border-radius: 8px;
+    }
+
+    @include media-max-s() {
+      padding: 12px;
+      @include font-size(1rem, 1.4, 500);
+
+      letter-spacing: -0.48px;
+    }
+
+    &__body {
+      padding: 0 16px 16px;
+      
+      @include media-max-s() {
+        padding: 0 12px 12px;
+      }
+    }
+
+    &__descr {
+      @include font-size(1rem, 1.4, 500);
+
+      @include size(67%);
+      letter-spacing: -0.48px;
+    }
+
+    .accord {
+      &__trigger {
+      }
+    }
+  }
+
+  &__body {
+    padding: 0 16px 16px;
+
+    ul {
+      padding-left: 20px;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    li {
+      @include font-size(16px, 1.4, 500);
+
+      letter-spacing: -0.48px;
+
+      margin-bottom: 20px;
+
+      padding-left: unset;
+
+      list-style-type: disc;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      &::after {
+        display: none !important;
+      }
+    }
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    a {
+      color: #00aae6;
+    }
+
+    .btn-blue {
+      @include font-size(16px, 1.4, 500);
+      padding: 6px 16px;
+      color: #fff;
+
+      letter-spacing: -0.48px;
+    }
+  }
+}

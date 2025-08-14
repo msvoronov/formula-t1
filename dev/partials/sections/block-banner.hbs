@@ -1,0 +1,48 @@
+<section class="section block-banner{{#if className}} {{className}}{{/if}}">
+<div class="container">
+
+
+    <div class="block-banner__wrap">
+        <div class="block-banner__bg">
+            {{{getPicture src=img s=s}}}
+        </div>
+        <div class="block-banner__content">
+            {{#if hasLogo}}
+            <div class="block-banner__content__logo">
+                {{{getImg src="logo-big.png"}}}
+            </div>
+            {{/if}}
+            <div class="block-banner__content__text-block">
+            {{#if titleLabel}}
+                <h2 class="block-banner__content__title">{{{ titleLabel }}}</h1>
+            {{/if}}
+            {{#if subtitle}}
+                <div class="block-banner__content__subtitle">{{{subtitle}}}</div>
+            {{/if}}
+            {{#if bannerDescr}}
+                <div class="block-banner__content__descr">{{{bannerDescr}}}</div>
+            {{/if}}
+
+            </div>
+            {{#if btnClass}}
+                <a href="https://team.t1.ru/contests/bids" class="link btn-white js-link{{#if btnClass}} {{btnClass}}{{/if}}">{{ link }}</a>
+            {{/if}}
+        </div>
+    </div>
+    
+    </div>
+</section>
+{{#if hasTitle}}
+<section class="section block-text">
+    <div class="container">
+        <h3 style="margin-bottom: 24px;">Здесь должен быть предусмотрен текст, который описывает правила и механику голосования.</h3>
+    </div>
+</section>
+{{/if}}
+{{#if tags}}
+<div class="block-banner__tags">
+    {{#each tags}}
+    <a href="{{href}}" class="btn btn-blue block-banner__tag">{{title}}</a>
+    {{/each}}
+</div>
+{{/if}}

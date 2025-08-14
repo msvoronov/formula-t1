@@ -1,0 +1,132 @@
+.block-nominations {
+  &__wrap {
+    @include flex(row, $gap: 0.6rem);
+    @include flex-wrap();
+
+
+  }
+
+  &__item {
+    $count: 2;
+    $gap: 0.6rem;
+
+    @include size(100%);
+    @include max-size(calc((100% - ($gap * ($count - 1))) / $count));
+    @include flex(column);
+    aspect-ratio: 680 / 360;
+
+    @include position(relative);
+
+    @include transition(background-color);
+
+    padding: 0.8rem;
+
+    border-radius: 0.8rem;
+    overflow: hidden;
+
+
+    @include media-max-md() {
+      $count: 2;
+      $gap: 16px;
+      
+      @include size(100%);
+      @include max-size(calc((100% - ($gap * ($count - 1))) / $count), 500px);
+    }
+    @include media-max-s() {
+      
+      @include size(100%);
+          @include min-size(null, 300px);
+      @include max-size(100%);
+    }
+
+    @include hover() {
+      background: #2425274D;
+
+      .block-nominations__item__buttons {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .block-nominations__item::after {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+      }
+      .block-nominations__item::before {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 217.11%);
+      }
+
+      .block-nominations__item__arrow {
+        opacity: 0;
+        transform: translate(10px, 10px);
+      }
+    }
+
+    
+    &::after {
+      content: "";
+      @include position(absolute, $bottom: 0, $left: 0);
+      @include size(100%, 24%);
+      @include transition(background);
+      z-index: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 217.11%);
+    }
+    
+    &::before {
+      content: "";
+      @include position(absolute, $top: 0, $left: 0);
+      @include size(100%, 40%);
+      @include transition(background);
+      z-index: 0;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+    }
+
+
+    &__arrow {
+      @include position(absolute, $bottom: 16px, $right: 16px);
+      @include transition(#{opacity, transform});
+      z-index: 1 ;
+    }
+
+    &__img {
+      @include position(absolute, $top: 0, $left: 0);
+      @include image-wrap(100%, 100%, cover);
+      z-index: -1;
+    }
+
+    &__title {
+      @include font-size(1.8rem, 1.2, 500);
+      @include position(relative);
+      z-index: 2;
+
+      @include color(#fff);
+      margin-bottom: 16px
+    }
+    &__descr {
+      @include font-size(1rem, 1.4, 500);
+      @include position(relative);
+      z-index: 2;
+      @include color(#fff);
+
+    }
+
+    &__tip {
+      @include flex(row, center, center, $gap: 6px);
+      @include color(#fff);
+      @include font-size(1rem, 1.4, 500);
+
+      cursor: pointer;
+    }
+
+    &__buttons {
+      @include flex(column, center, center, 16px);
+      @include transition(#{opacity, transform});
+      
+      transform: translateY(20px);
+      opacity: 0;
+      pointer-events: none;
+
+      margin-top: auto;
+      z-index: 2;
+    }
+  }
+}

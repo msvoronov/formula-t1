@@ -1,0 +1,25 @@
+{{#> layouts/main title="Победители" noNav=true}}
+
+{{#with this.store.banner.main}}
+{{> sections/block-video-banner}}
+{{/with}}
+
+<section class="section block-text">
+  <div class="container">
+
+    <h3 style="margin-bottom: 24px;">Номинации и проекты - победители</h3>
+    <p class="block-text__text" style="    margin-bottom: 24px;
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 500;
+    max-width: 70%;">
+      Топ-3 проектов по итогам оценки экспертов и голосования сотрудников. Кто станет победителем?
+    </p>
+  </div>
+</section>
+
+{{#with this.store.contentWinners}}
+{{> sections/block-winners}}
+{{/with}}
+
+{{/layouts/main}}

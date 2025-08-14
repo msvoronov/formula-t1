@@ -1,0 +1,437 @@
+.block-winners {
+
+  margin-top: unset !important;
+
+  padding-top: unset !important;
+  &__container {
+    margin-bottom: 24px;
+  }
+
+  &__tag {
+    @include font-size(0.8rem, 1.2, 500);
+    @include size(fit-content);
+    @include bg-color(#fff);
+    margin-bottom: 16px;
+    padding: 8px 24px;
+    border-radius: 60px;
+  }
+
+  &__title-wrap {
+    @include flex(row, space-between, center);
+  }
+
+  &__link {
+    @include color(rgb(136, 156, 175), 1);
+    @include font-size(0.7rem, 1.4, 500);
+    @include flex(row, center, center);
+    @include transition(color);
+    
+    svg {
+      @include transition(transform);
+      
+      path {
+        @include transition(fill);
+      }
+    }
+    @include hover() {
+      @include color(#000);
+
+      svg {
+        transform: translateX(5px);
+        path {
+          fill: #000;
+        }
+      }
+    }
+  }
+
+  &__title {
+    @include font-size(2.4rem, 1, 500);
+    padding: 24px 0;
+    
+    padding-top: 194px;
+    margin-top: -170px;
+  }
+
+  &__descr {
+    margin-bottom: 24px;
+    @include font-size(1rem, 1.2, 500);
+    @include max-size(70%);
+  }
+
+  &__wrap {
+    @include flex(row, $gap: 0.8rem);
+    @include flex-wrap();
+
+    &.row-3 {
+      .block-winners__item {
+        $gap: 0.8rem;
+        $count: 3;
+        @include size(100%);
+        @include max-size(calc((100% - ($gap * ($count - 1))) / $count));
+      }
+    }
+  }
+
+  &__slider {
+
+    .swiper-button-disabled {
+      opacity: 0 !important;
+      pointer-events: none !important;
+
+      @include transition(opacity);
+    }
+      &__item {
+        &__img {
+          
+          aspect-ratio: 648 / 294;
+
+          @include max-size(100%, 100%);
+          @include flex(row, center, center);
+          overflow: hidden;
+          border-radius: 16px;
+          margin-bottom: 16px;
+          object-fit: cover;
+
+          img {
+            @include size(100%);
+            object-fit: cover
+          }
+        }
+
+        &__title {
+          @include font-size(0.8rem, 1.2, 500);
+        }
+      }
+    }
+
+
+
+  &__item {
+    $gap: 0.8rem;
+    $count: 2;
+
+    @include flex(column);
+
+    @include size(100%);
+    @include max-size(calc((100% - ($gap * ($count - 1))) / $count));
+    
+    @include bg-color(#F7F7F8);
+    
+    padding: 0.8rem;
+    padding-bottom: 1.2rem;
+    border-radius: 0.8rem;
+    
+    @include media-max-md() {
+      @include max-size(100%);
+
+    }
+
+    &__counter {
+      @include flex($gap: 8px);
+
+    }
+
+    &__counter-wrap {
+
+      overflow: hidden;
+      @include flex(row, center, center, $gap: 2.5px);
+      @include border(2px, solid, #B2EDFF);
+      @include font-size(0.8rem, 1.4, 500);
+      @include color(#00AAE6);
+      @include bg-color(#E5F9FF);
+      @include max-size(null, 2rem);
+
+      border-radius: 8px;
+      padding: 6px 8px;
+
+      &.checked {
+
+        .block-winners__item__counter-wrap__digit {
+          .cur {
+          @include position(absolute, $left: 0); 
+          transform: translateY(-100%);
+          opacity: 0; 
+        }
+        .next {
+          @include position(absolute, $left: 0); 
+          transform: translateY(0);
+          opacity: 1; 
+        }
+        }
+      }
+
+      svg {
+        margin: auto 0;
+        @include min-size(22px, 22px);
+      }
+
+      &__wrap {
+        @include position(relative);
+        @include flex(row, center, center);
+        @include size(20px, 22px);
+        @include min-size(null, 22px);
+      }
+
+      &__digit {
+        @include size(100% , 100%);
+        @include flex($align: center);
+        position: relative;
+          span {
+            @include transition(#{opacity, transform}, 0.4s);
+          }
+          .cur {
+            @include position(absolute);
+            transform: translateY(0);
+          
+            opacity: 1;
+          }
+          .next {
+            @include position(absolute);
+
+              transform: translateY(100%);
+          
+            opacity: 0;
+          }
+      }
+      
+      &__count {
+        @include transition(#{opacity, translate});
+
+        &--cur {
+          @include position(absolute);
+
+          opacity: 0;
+        }
+        &--next {
+          @include position(relative);
+          transform: translateY(100%);
+
+          opacity: 1;
+        }
+      }
+    }
+
+    &__counter-trigger {
+      overflow: hidden;
+      @include min-size(max-content);
+      padding: 6px 16px;
+      @include flex(row, center, center, 8px);
+      @include bg-color(#00AAE6);
+      border-radius: 30px;
+      @include font-size(1rem, 1.4, 500); 
+      @include color(#fff);
+      @include transition(background-color);
+      @include border(#00AAE6, 1px,  solid );
+      
+      cursor: pointer;
+      
+      @include hover() {
+        @include bg-color(#005aae);
+      }
+
+      &.disabled {
+        @include bg-color(transparent);
+        @include color(#B9C4D0);
+
+        border-color: #B9C4D0;
+
+        pointer-events: none;
+      }
+
+      &.checked {
+        pointer-events: none;
+        .block-winners__item__counter-trigger__text--cur {
+          @include position(absolute, $left: 0); 
+          transform: translateY(-100%);
+          opacity: 0; 
+        }
+        .block-winners__item__counter-trigger__text--next {
+          @include position(relative, $left: 0); 
+          transform: translateY(0);
+          opacity: 1; 
+        }
+      }
+
+      &__wrap {
+        @include position(relative);
+      }
+      &__text {
+        @include transition(#{opacity, transform});
+
+        &--cur {
+          @include position(relative, $left: 0); 
+          transform: translateY(0);
+          opacity: 1; 
+        }
+        
+        &--next {
+          @include position(absolute, $left: 0);
+          @include flex(row, center, center, 8px);
+          transform: translateY(100%);
+          opacity: 0; 
+
+        }
+      }
+    }
+  
+    &__title {
+      @include flex(row, space-between, center);
+      @include font-size(1.4rem, 1.2, 500);
+      @include border(#000000, 1px, solid, bottom);
+      padding-bottom: 0.8rem;
+      margin-bottom: 0.8rem;
+
+    }
+
+    &__person {
+      @include flex($gap: 0.6rem);
+      margin-bottom: 0.6rem;
+    
+    }
+
+    &__img {
+      @include size(100%, 100%);
+      @include max-size(2.4rem, 2.4rem);
+      @include min-size(null, 2.4rem);
+
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        @include size(100%, 100%);
+        object-fit: cover;
+      }
+    }
+
+    &__info {
+      @include flex(column, space-between);
+      @include font-size(0.8rem, 1.2, 500);
+      @include color(#000000);
+      
+    }
+    
+    &__position {
+      @include color(#8496A8);
+
+    }
+
+    &__text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 11;
+      -webkit-box-orient: vertical;
+    
+      @include font-size(0.8rem, 1.4, 400); 
+      @include color(#8496A8);
+      
+      strong {
+        @include color(#000);
+      }
+      
+      margin-bottom: 24px;
+    }
+
+    &__bot {
+      @include flex(row, space-between);
+      margin-top: auto;
+      margin-bottom: 24px;
+    }
+
+    
+
+    &__tag {
+      @include font-size(0.8rem, 1.2, 500);
+      @include flex(row, center, center);
+
+      @include color(#000);
+    }
+    
+    &__more {
+      @include font-size(0.8rem, 1.2, 500);
+      @include color(#00AAE6);
+      @include flex(row, center, center, 4px);
+      
+      @include transition(color);
+      cursor: pointer;
+      
+      svg path {
+        @include transition(fill);
+
+      }
+      @include hover() {
+        @include color(#005aae);
+        
+        svg path {
+          fill: #005aae;
+          
+        }
+      }
+    }
+  }
+
+
+}
+
+.vote-modal__wrap {
+  @include flex(column, $gap: 12px);
+  @include position(fixed, $right: 32px, $bottom: 32px);
+  @include size(100%);
+  @include max-size(39.66%);
+
+  pointer-events: none;
+
+  z-index: 1060;
+
+}
+  .js-project-name {
+    max-width: 75%;
+  }
+.vote-modal {
+  @include bg-color(#00AAE6);
+  @include flex(row, center, center, 16px);
+  @include transition(opacity);
+  
+  border-radius: 16px;
+  padding: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  
+  @include transition(#{opacity, transform});
+  
+  &.active {
+    pointer-events: all;
+    opacity: 1;
+    order: 1;
+
+  }
+
+
+  &__info {
+    @include flex(column, $gap: 8px);
+    @include size(100%);
+    // @include max-size(381px);
+
+    &__title {
+      @include font-size(1.6rem, 1.2, 500);
+      @include color(#fff);
+
+
+    }
+    &__descr {
+      @include font-size(0.8rem, 1.4, 400);
+      @include color(#fff);
+    }
+  }
+
+  &__btn {
+    @include bg-color(#fff);
+    @include color(#00AAE6);
+    @include font-size(0.8rem, 1.4, 500);
+    letter-spacing: -0.03em;
+
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 6px 16px;
+  };
+}

@@ -1,0 +1,28 @@
+{{#> layouts/main title="Этап 1"}}
+  {{#with this.store.banner.main}}
+    {{> sections/block-video-banner}}
+  {{/with}}
+  <section class="section block-text">
+    <div class="container">
+
+      <h3>Даже самые сложные вызовы превращаются в яркие проекты и выдающиеся достижения, когда встречаются с талантами Холдинга
+      Т1. <br>Формула Т1 – химия наших побед.</h3>
+    </div>
+  </section>
+  {{#with this.store.listPlus}}
+    {{> sections/block-plus-list}}
+  {{/with}}
+  {{#with this.store.lineSteps}}
+    {{> sections/block-step-line}}
+  {{/with}}
+  {{> sections/block-feedback}}
+  {{#with this.store.nominations}}
+    {{> sections/block-nominations}}
+  {{/with}}
+  {{> sections/block-experts}}
+  
+
+  {{#with this.store.faq}}
+    {{> sections/block-accordion}}
+  {{/with}}
+{{/layouts/main}}

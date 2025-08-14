@@ -1,0 +1,27 @@
+.block-plus-list {
+  
+  
+  &__wrap {
+    @include flex($gap: 56px);
+    
+    @include media-max-md() {
+      @include flex(column, $gap: 0);
+    }
+  }
+
+  &__col {
+    @include flex(column);
+    @include size(100%);
+  }
+
+  &__item {
+    @include flex($gap: 16px);
+
+    padding: 12px 0;
+
+    &__text {
+      @include font-size(1rem, 1.4, 500);
+
+    }
+  }
+}

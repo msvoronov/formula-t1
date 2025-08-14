@@ -1,0 +1,36 @@
+{{#> layouts/main title="Этап 2"}}
+  {{#with this.store.banner.main}}
+  {{> sections/block-video-banner}}
+  {{/with}}
+<section class="section block-text">
+  <div class="container">
+
+    <h3 style="margin-bottom: 24px;">С 1 по 15 ноября открыто голосование за проекты в номинациях "Сила улучшений" и "Покоряя сердца".</h3>
+    <p class="block-text__text">
+      Ваш голос имеет вес в общей оценке проектов в этих номинациях. Переходите на страницы голосования!Другие номинации в
+      голосовании не участвуют, однако в DION можно оставить свой лайк и комментарий к <a href="">видео визиткам проектов</a>.
+    </p>
+    {{!-- <div class="btn btn-blue btn-big" style="max-width: 10rem; padding-inline: 5px;">Заявить проект</div> --}}
+  </div>
+</section>
+{{#with this.store.nominations.step_3_1}}
+{{> sections/block-nominations}}
+{{/with}}
+{{#with this.store.nominations.step_3_2}}
+{{> sections/block-nominations}}
+{{/with}}
+{{!-- {{#with this.store.listPlus}}
+{{> sections/block-plus-list}}
+{{/with}} --}}
+{{#with this.store.lineSteps}}
+{{> sections/block-step-line}}
+{{/with}}
+{{!-- {{> sections/block-feedback}} --}}
+
+{{> sections/block-experts}}
+
+
+{{#with this.store.faq}}
+{{> sections/block-accordion}}
+{{/with}}
+{{/layouts/main}}

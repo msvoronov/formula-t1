@@ -1,0 +1,20 @@
+<section class="section block-plus-list" id="about">
+  <div class="container">
+    <h2 class="section__title">{{title}}</h2>
+    <div class="block-plus-list__wrap">
+      {{#each cols}}
+      <div class="block-plus-list__col">
+        {{#each items}}
+        <div class="block-plus-list__item">
+          <div class="block-plus-list__item__img">
+            {{{ getSvg src="plus"}}}
+          </div>
+          <div class="block-plus-list__item__text">{{item}}</div>
+        </div>
+        {{/each}}
+      </div>
+      {{/each}}
+
+    </div>
+  </div>
+</section>

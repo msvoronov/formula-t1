@@ -1,0 +1,13 @@
+.block-text {
+  position: relative;
+  z-index: 3;
+  &__text {
+    @include font-size(1.4rem, 1.2, 500);
+
+
+
+    a {
+      @include color(#00AAE6);
+    }
+  }
+}

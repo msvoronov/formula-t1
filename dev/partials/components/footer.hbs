@@ -1,0 +1,50 @@
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__top__logo">
+        {{{getSvg src="logo-footer"}}}
+    </div>
+    <div class="footer__top__buttons">
+      <a href="https://team.t1.ru/" target="_blank" class="footer__top__button btn-round">
+        {{{getSvg src="icon-logo-t1"}}}
+      </a>
+      <a href="https://t.me/+P0AVnqO2WfYyMTQ6" target="_blank" class="footer__top__button btn-round">
+        {{{getSvg src="icon-tg"}}}
+      </a>
+    </div>
+  </div>
+  {{!-- <div class="footer__bottom">
+    <a href="" class="footer__bottom__link">Пользовательское соглашение</a>
+    <a href="" class="footer__bottom__link">Политика обработки персональных данных</a>
+  </div> --}}
+
+  {{>modals/modals}}
+
+    <div class="vote-modal__wrap js-vote-modal-wrap">
+  {{#with this.store.content.content1}}
+  {{#each sections}}
+      <div class="vote-modal" id="{{id}}">
+        <div class="vote-modal__info">
+          <div class="vote-modal__info__title">Ваш голос учтён!</div>
+          <div class="vote-modal__info__descr">
+            Не забудьте проголосовать по другим категориям данной номинации.
+          </div>
+        </div>
+        <div class="vote-modal__btn">Проголосовать</div>
+      </div>
+  {{/each}}
+  {{/with}}
+  {{#with this.store.content.content2}}
+    {{#each sections}}
+      <div class="vote-modal" id="{{id}}">
+        <div class="vote-modal__info">
+          <div class="vote-modal__info__title">Ваш голос учтён!</div>
+          <div class="vote-modal__info__descr">
+            Не забудьте проголосовать по другим категориям данной номинации.
+          </div>
+        </div>
+        <div class="vote-modal__btn">Проголосовать</div>
+      </div>
+    {{/each}}
+  {{/with}}
+      </div>
+</footer>
