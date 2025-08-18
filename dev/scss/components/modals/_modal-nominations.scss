@@ -1,54 +1,144 @@
 .modal-nominations {
+  &__wrap {
+    @include bg-color(#151515);
+    @include color(#fff);
+  }
+
+  &__title {
+    @include font-size(1.6rem, 32px, 500);
+    letter-spacing: -0.02em;
+    padding: 48px 32px 0;
+    margin-bottom: 16px;
+  }
 
   &__content {
     padding: 32px;
     @extend %custom-srollbar-y;
     @include max-size(null, 500px);
-
-
-    // -ms-overflow-style: none;
-    // overflow: -moz-scrollbars-none;
-    // overscroll-behavior: none;
-
   }
 
-  &__title {
-    @include font-size(2.4rem, 1.2, 500);
-    padding: 32px 32px 0;
-    margin-bottom: 24px;
-  }
-
-  &__info-wrap {
+  &__categories {
     &__subtitle {
-      @include font-size(1.4rem, 1.2, 500);
+      @include font-size(1.2rem, 28px, 500);
+      letter-spacing: -0.02em;
       margin-bottom: 24px;
     }
-    margin-bottom: 48px;
-    &__list {
-      @include font-size(1rem, 1.4, 400);
-      @include flex(column, $gap: 8px);
-  
-      padding-left: 1.2rem;
-  
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px 50px;
+      margin-bottom: 48px;
+    }
+    &__category {
+      position: relative;
+      left: 30px;
+      @include font-size(1.0rem, 28px, 400);
+      letter-spacing: -0.02em;
+      word-break: break-word;
+    }
+    &__ext-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 48px;
+
       &__item {
-  
+        border-top: 1px solid #F4F4F4;
+        padding-top: 12px;
       }
-  
+      &__name {
+        margin-bottom: 12px;
+        @include font-size(1.0rem, 24px, 500);
+        letter-spacing: -0.02em;
+      }
+      &__text {
+        @include font-size(0.8rem, 24px, 400);
+        letter-spacing: -0.01em;
+      }
     }
   }
-  ul,li,ol {
-    list-style: disc;
-  }
-  
-  &__text {
-    @include font-size(1rem, 1.4, 500);
-    
-    margin-bottom: 48px;
-  }
 
+  &__info {
+    &__subtitle {
+      @include font-size(1.0rem, 24px, 500);
+      letter-spacing: -0.02em;
+      border: 1px solid #FA4A14;
+      padding: 16px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: relative;
+      left: 25px;
+      max-width: 580px;
+    }
+
+    &__item {
+      @include font-size(1.0rem, 28px, 400);
+      letter-spacing: -0.02em;
+    }
+  }
+ 
+  &__criteria {
+    &__subtitle {
+      @include font-size(1.2rem, 28px, 500);
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+
+      @include media-max-lg() {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include media-max-md() {
+        grid-template-columns: repeat(1, 1fr);
+      }    
+    }
+    &__item {
+      border-top: 1px solid #F4F4F4;
+      padding-top: 12px;
+    }
+    &__ext-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    &__name {
+      margin-bottom: 16px;
+    }
+    &__percentage {
+      @include font-size(1.6rem, 32px, 500);
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+
+      span {
+        @include color(#1DAFF7);
+      }
+    }
+    &__descr {
+      @include font-size(0.8rem, 24px, 400);
+      letter-spacing: -0.01em;
+    }
+  }  
+  
   &__button-wrap {
     @include flex(row, flex-end);
     @include border(1px, solid, $gray, top);
     padding: 16px 32px;
+  }
+
+  &__button {
+    @include font-size(0.9rem, 26px, 500);
+    padding: 10px 24px;
   }
 }

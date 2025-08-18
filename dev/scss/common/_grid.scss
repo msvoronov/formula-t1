@@ -44,7 +44,7 @@ h3 {
 
 .container {
   @include size(100%, null);
-  @include max-size(3000px);
+  @include max-size(1440px);
   // @include max-size($adapt, null);
 
   padding-inline: 1.6rem;
@@ -78,34 +78,6 @@ h3 {
     margin: 0 20px;
 
     
-  }
-
-  &:not(
-      .section-hero-slider,
-      .section-hero-banner,
-      .section-app-banner,
-      .section--no-margin-top,
-      .section-home-news
-    ):first-child,
-  & + & {
-    padding-top: 98px;
-    margin-top: -74px;
-    // @include media-max-md() {
-    //     margin-top: 30px;
-    // }
-  }
-
-  &:first-child:not(
-      .section-hero-slider,
-      .section-hero-banner,
-      .section-app-banner,
-      .section-home-news
-    ) {
-    // margin-top: 50px;
-
-    // @include media-max-md() {
-    //   margin-top: 30px;
-    // }
   }
 
   &:last-child:not(.section-app, .section-search-result) {
@@ -232,9 +204,8 @@ h3 {
     @include max-size(66%);
 
     @include media-min-xxl() {
-        @include font-size(1.8rem, 1.2, 500);
-      }
-    margin-bottom: 1.2rem;
+      @include font-size(1.8rem, 1.2, 500);
+    }
 
     &.olympic {
       @include media-max-md() {
@@ -242,7 +213,6 @@ h3 {
       }
       @include media-max-s() {
         @include font-size(1rem, 1.4, 500);
-
       }
     }
 

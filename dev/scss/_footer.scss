@@ -1,36 +1,18 @@
 .footer {
   @include flex(column);
-  @include max-size(3000px);
+  @include bg-color(#151515);
   margin: 0 auto;
-  padding-top: 48px;
-  
-  padding: 0 32px 24px;
+  padding: 80px 32px;
 
-
-  &__top {
-    @include bg-color($gray-light);
+  &__top {    
     @include flex(row, space-between);
-
-    border-radius: 16px;
-    padding: 16px;
 
     &__logo {
       @include max-size(56px);
     }
 
     &__buttons {
-      @include flex(row, $gap: 12px);
-    }
-  }
-
-  &__bottom {
-    padding: 24px 0;
-
-    @include flex(row, space-between);
-
-    &__link {
-      @include font-size(1rem, 1.4, 500);
-      @include color($gray);
-    }
+      @include flex(row, $gap: 28px);
+    }    
   }
 }

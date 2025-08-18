@@ -1,63 +1,44 @@
-$block-name: "block-accordion";
-
-.#{$block-name} {
-
-  a {
-    text-decoration: unset !important;
+.block-accordion {
+  @include bg-color(#323232);
+  @include color(#fff);
+  padding: 80px 0px;
+  margin-bottom: 0 !important;
+  
+  &__title {
+    @include font-size(3.2rem, 64px, 500);
+    letter-spacing: -0.04em;
+    margin-bottom: 64px;
   }
 
   &__wrap {
-    @include flex(column, $gap: 8px);
-    @include max-size(66%);
-    
-    @include media-max-md() {
-      @include max-size(100%);
-    }
-  }
-
-  &__descr {
-    @include font-size(0.8rem, 1.4, 500);
-
-    letter-spacing: -0.48px;
-
-    @include media-max-md() {
-      @include font-size(1rem, 1.4, 500);
-      letter-spacing: -0.28px;
-    }
-  }
+    @include flex(column);
+  }  
 
   &__accord {
     @include size(100%);
-    @include bg-color($gray-light);
-    @include transition(background-color);
-
-    @include hover() {
-      @include bg-color($gray-light-2);
-    }
-
-    border-radius: 16px;
-
-    @include media-max-md() {
-      border-radius: 8px;
-    }
+    border-top: 1px solid #F4F4F4;
   }
 
   &__trigger {
     @include font-size(1rem, 1.4, 500);
-
-    letter-spacing: -0.6px;
-    border-radius: 16px;
-    padding: 16px;
-
-    @include media-max-md() {
-      border-radius: 8px;
-    }
+    letter-spacing: -0.02em;    
+    padding: 16px 0px 46px;
+    z-index: 2;
+    width: 50vw;
 
     @include media-max-s() {
       padding: 12px;
       @include font-size(1rem, 1.4, 500);
 
       letter-spacing: -0.48px;
+    }
+
+    &__text {
+
+    }
+
+    &__cross {
+
     }
 
     &__body {
@@ -74,15 +55,12 @@ $block-name: "block-accordion";
       @include size(67%);
       letter-spacing: -0.48px;
     }
-
-    .accord {
-      &__trigger {
-      }
-    }
   }
 
-  &__body {
-    padding: 0 16px 16px;
+  &__body {    
+    @include position(relative, $top: -75px, $left: 51vw);
+    z-index: 1;
+    width: 44vw;
 
     ul {
       padding-left: 20px;
@@ -96,11 +74,8 @@ $block-name: "block-accordion";
       @include font-size(16px, 1.4, 500);
 
       letter-spacing: -0.48px;
-
       margin-bottom: 20px;
-
       padding-left: unset;
-
       list-style-type: disc;
 
       &:not(:last-child) {
@@ -121,13 +96,10 @@ $block-name: "block-accordion";
     a {
       color: #00aae6;
     }
+  }
 
-    .btn-blue {
-      @include font-size(16px, 1.4, 500);
-      padding: 6px 16px;
-      color: #fff;
-
-      letter-spacing: -0.48px;
-    }
+  &__descr {    
+    @include font-size(1rem, 1.4, 400);
+    letter-spacing: -0.02em;
   }
 }

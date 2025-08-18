@@ -1,10 +1,6 @@
 {
   "main": {
-    "bannerDescr": "Выбираем самые знаковые проекты<br> Холдинга по итогам 2024 года",
-    "img": "banner.png",
-    
-    "link": "Заявить проект",
-    "hasLogo": true
+    "img": "banner.png"
   },
   "banner1": {
     "className": "content",

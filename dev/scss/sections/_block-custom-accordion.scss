@@ -1,0 +1,112 @@
+.block-custom-accordion {
+  @include bg-color(#323232);
+  @include color(#fff);
+  padding: 80px 0px;
+  margin-bottom: 0 !important;
+  
+  &__title {
+    @include font-size(3.2rem, 64px, 500);
+    letter-spacing: -0.04em;
+    margin-bottom: 64px;
+  }
+
+  &__wrap {
+    @include flex(column);
+  }  
+
+  &__accord {
+    @include position(relative);
+    @include size(100%);
+    border-top: 1px solid #F4F4F4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    padding: 16px 0 40px;
+
+    &.active {
+      & .block-custom-accordion__subtitle__trigger__cross::before {
+        transform: translate(-50%, -50%) rotate(90deg);
+        @include transition(transform);
+      } 
+    }
+  }
+
+  &__subtitle {
+    &__text {
+      @include font-size(1rem, 1.4, 500);
+      letter-spacing: -0.02em; 
+      margin-bottom: 12px;
+    }
+
+    &__trigger {
+      @include position(absolute, $top: 0, $left: 0);
+      padding: 16px 0 52px;
+      width: 100%;
+      cursor: pointer;
+      z-index: 2;
+    
+      &__cross {
+        margin-left: auto;
+        @include position(relative);
+        @include size(36px, 36px);
+
+        &::after,
+        &::before {
+          content: "";
+          @include position(absolute, $top: 50%, $left: 50%);
+          @include bg-color(#F4F4F4);
+          transform: translate(-50%, -50%);
+          @include transition(transform);
+        }
+        &::before {
+          width: 2px;
+          height: 24px;
+        }
+        &::after {
+          width: 24px;
+          height: 2px;
+        }        
+      }
+    }
+  }
+
+  &__body {
+    padding-right: 68px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+
+    &__descr {
+      @include font-size(1rem, 1.4, 400);
+      letter-spacing: -0.02em;
+
+      & + hr {
+        margin-top: 20px;
+        border-bottom-color: #fff;
+      }
+      & ~ .bottom {        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        ul {
+          margin-top: 16px;
+          li {
+            list-style-type: none;
+            margin-bottom: 16px;
+            line-height: 1.4;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+        & .left {
+
+        }
+        & .right {
+
+        }
+      }
+    }
+  }  
+}

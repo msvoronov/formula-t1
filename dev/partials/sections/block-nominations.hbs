@@ -1,6 +1,6 @@
 <section class="section block-nominations" id="nominations">
   <div class="container">
-    <h2 class="section__title">{{title}}</h2>
+    <h2 class="section__title block-nominations__title">{{{title}}}</h2>
     <div class="block-nominations__wrap">
       {{#each list}}
       <div class="block-nominations__item">
@@ -9,13 +9,8 @@
         </div>
         <div class="block-nominations__item__title">{{title}}</div>
         <div class="block-nominations__item__descr">{{{descr}}}</div>
-        <div class="block-nominations__item__arrow">{{{getSvg src="arrow"}}}</div>
-        <div class="block-nominations__item__buttons">
-          <div class="block-nominations__item__tip js-open-modal" {{#if target}} data-target="{{target}}"{{/if}}>
-            {{{getSvg src='i-icon'}}}
-            Подробнее о номинации
-          </div>
-          <a href="{{href}}" class="block-nominations__item__link btn btn-white">{{btnLabel}}</a>
+        <div class="block-nominations__item__button js-open-modal" {{#if target}} data-target="{{target}}"{{/if}}>
+          Подробнее <span>{{{getImg src="arrow.png"}}}</span>
         </div>
       </div>
       {{/each}}

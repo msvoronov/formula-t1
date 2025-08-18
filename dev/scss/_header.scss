@@ -1,16 +1,15 @@
 .header {
-  @include bg-color(#fff);
-
   @include position(sticky, $top: 0);
   @include max-size(3000px);
   @include min-size(null, 70px);
   @include transition(box-shadow);
+  background-color: transparent;
   margin: 0 auto;
   padding: 0 32px;
   z-index: 10;
   
   &.scroll {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #323232;
     backdrop-filter: blur(4px);
   }
 
@@ -20,18 +19,18 @@
 
     &__nav {
       @include flex(row, null, center);
-
-      margin-right: auto;
+      gap: 1.5rem;
+      margin-left: auto;
 
       &__item {
         @include font-size(0.8rem, 1.4, 500);
-        @include color($blue);
+        color: #fff;
         @include transition(color);
 
         padding: 4px 12px;
         
         @include hover() {
-          @include color($blue-dark);
+          color: #AEB1B7;
         }
 
       }

@@ -6,7 +6,7 @@
     @include position(fixed, $top: 0, $left: 0, $right: 0, $bottom: 0);
     @include size(100vw, 100%);
     @include transition(#{opacity, visibility});
-    @include bg-color(#000, 0.5);
+    @include bg-color(#82858E, 0.2);
 
     backdrop-filter: blur(5px);
 
@@ -43,7 +43,7 @@
     &-content {
         @include position(relative);
         @include size(100%);
-        @include max-size(45.6rem, 100%);
+        @include max-size(33.7rem, 100%);
         @include bg-color(#fff);
         @include flex(column);
 
@@ -128,7 +128,7 @@
             @include position(absolute);
             @include size(24px, 1.5px);
 
-            @include bg-color(#000);
+            @include bg-color(#F4F4F4);
             @include transition(background-color);
         }
 

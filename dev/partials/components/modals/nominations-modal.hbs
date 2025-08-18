@@ -2,27 +2,78 @@
   {{#each list}}
     {{#> components/modal-wrap id=id title=title classNameModal="modal-nominations" }}
     <div class="modal-nominations__wrap">
-      <div class="modal-nominations__title">{{title}}</div>
-
-
+      <p class="modal-nominations__title">{{title}}</p>
       <div class="modal-nominations__content">
-              {{#if topText}}
-              <div class="modal-nominations__text">{{{topText}}}</div>
-              {{/if}}
-        {{#each infoWrap}}
-          <div class="modal-nominations__info-wrap">
-            <div class="modal-nominations__info-wrap__subtitle">{{subtitle}}</div>
-            <ul class="modal-nominations__info-wrap__list">
-              {{#each list}}
-                <li class="modal-nominations__info-wrap__list__item">{{this}}</li>
+        {{#if categories}}
+          <div class="modal-nominations__categories">
+            <p class="modal-nominations__categories__subtitle">{{{categories.subtitle}}}</p>
+            <ul>
+              {{#each categories.list}}
+                <li class="modal-nominations__categories__category">{{{this}}}</li>
               {{/each}}
             </ul>
           </div>
-        {{/each}}
-        <div class="modal-nominations__text">{{{text}}}</div>
+        {{/if}}
+        {{#if extendedCategories}}
+          <div class="modal-nominations__categories">
+            <p class="modal-nominations__categories__subtitle">{{{extendedCategories.subtitle}}}</p>
+            <div class="modal-nominations__categories__ext-list">
+              {{#each extendedCategories.list}}
+                <div class="modal-nominations__categories__ext-list__item">
+                  <p class="modal-nominations__categories__ext-list__name">{{{name}}}</p>
+                  <p class="modal-nominations__categories__ext-list__text">{{{text}}}</p>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        {{/if}}
+        {{#if isNominationClosed}}
+          <div class="modal-nominations__info">
+            <p class="modal-nominations__info__subtitle">{{{getImg src="i-icon-error.png"}}}{{{info.subtitle}}}</p>
+            <ul>
+              {{#each info.list}}
+                <li class="modal-nominations__info__item">{{{this}}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        {{else}}
+          {{#if criteria}}
+            <div class="modal-nominations__criteria">
+              <p class="modal-nominations__criteria__subtitle">{{{criteria.subtitle}}}</p>
+              <div class="modal-nominations__criteria__list">
+                {{#each criteria.list}}
+                  <div class="modal-nominations__criteria__item">
+                    <p class="modal-nominations__criteria__percentage">{{{percentage}}}<span>%</span></p>
+                    <p class="modal-nominations__criteria__descr">{{{descr}}}</p>
+                  </div>
+                {{/each}}
+              </div>
+            </div>
+          {{/if}}
+          {{#if extendedCriteria}}
+            <div class="modal-nominations__criteria">
+              <p class="modal-nominations__criteria__subtitle">{{{extendedCriteria.subtitle}}}</p>
+              <div class="modal-nominations__criteria__ext-wrap">
+              {{#each extendedCriteria.wrap}}
+                <div>
+                  <p class="modal-nominations__criteria__name">{{{name}}}</p>
+                  <div class="modal-nominations__criteria__list">
+                    {{#each list}}
+                      <div class="modal-nominations__criteria__item">
+                        <p class="modal-nominations__criteria__percentage">{{{percentage}}}<span>%</span></p>
+                        <p class="modal-nominations__criteria__descr">{{{descr}}}</p>
+                      </div>
+                    {{/each}}
+                  </div>
+                </div>
+              {{/each}}
+              </div>
+            </div>
+          {{/if}}
+        {{/if}}
       </div>
       <div class="modal-nominations__button-wrap">
-        <a href="{{href}}" class="btn btn-blue btn-big{{#if btnClass}} {{btnClass}}{{/if}}">{{btnLabel}}</a>
+        <a href="{{href}}" class="btn btn-blue modal-nominations__button {{#if btnClass}} {{btnClass}}{{/if}}">{{btnLabel}}</a>
       </div>
     </div>
     {{/components/modal-wrap}}

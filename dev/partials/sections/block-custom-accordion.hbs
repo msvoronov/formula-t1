@@ -1,0 +1,24 @@
+<section class="section block-custom-accordion" id="faq">
+    <div class="container">
+      <h2 class="section__title block-custom-accordion__title">{{title}}</h2>
+        <div class="block-custom-accordion__wrap js-custom-accordion">
+            {{#each list}}                
+                <div class="block-custom-accordion__accord js-custom-accord">
+                    <div class="block-custom-accordion__subtitle">
+                        <p class="block-custom-accordion__subtitle__text">
+                            {{label}}
+                        </p>
+                        <div class="block-custom-accordion__subtitle__trigger js-custom-trigger">
+                            <div class="block-custom-accordion__subtitle__trigger__cross"></div>
+                        </div>
+                    </div>                    
+                    <div class="block-custom-accordion__body js-custom-content">
+                        <p class="block-custom-accordion__body__descr">
+                            {{{descr}}}
+                        </p>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</section>

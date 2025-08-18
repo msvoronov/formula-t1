@@ -1,18 +1,23 @@
 .block-slider-people {
   &__item {
     &__img {
-      @include image-wrap(100%, 100%, contain);
-      border-radius: 16px;
-      margin-bottom: 16px;
+      @include image-wrap(100%, 100%, contain);      
+      width: 120px;
+      height: 120px;
+      margin-bottom: 12px;
       overflow: hidden;
     }
 
-    &__title,
-    &__descr {
-      @include font-size(0.8rem, 1.4, 500);
+    &__title {
+      @include font-size(1.5rem, 32px, 500);
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
     }
+
     &__descr {
+      @include font-size(0.8rem, 18px, 400);
+      letter-spacing: -0.01em;
       @include color($gray);
-    }
+    }    
   }
 }

@@ -1,8 +1,16 @@
 .block-plus-list {
+  @include bg-color(#323232);
+  @include color(#fff);
+  padding: 80px 0;
   
-  
+  &__title {
+    @include font-size(3.2rem, 64px, 500);
+    letter-spacing: -0.04em;
+    margin-bottom: 52px;
+  }
+
   &__wrap {
-    @include flex($gap: 56px);
+    @include flex($gap: 28px);
     
     @include media-max-md() {
       @include flex(column, $gap: 0);
@@ -16,12 +24,19 @@
 
   &__item {
     @include flex($gap: 16px);
-
     padding: 12px 0;
 
-    &__text {
-      @include font-size(1rem, 1.4, 500);
+    &__img {
+      @include position(relative, $top: 2px);
+    
+      & svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
 
+    &__text {
+      @include font-size(1.2rem, 28px, 500);
     }
   }
 }

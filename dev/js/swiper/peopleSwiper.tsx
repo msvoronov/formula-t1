@@ -39,17 +39,12 @@ const getOptions = (): SwiperOptions => {
     },
     modules: [Navigation],
     breakpoints: {
-      450: {
-        slidesPerView: 3,
-      },
-      786: {
-        spaceBetween: 24,
+      768: {
         slidesPerView: 4,
       },
-      1024: {
-        slidesPerView: 6,
-        // allowTouchMove: false,
-      },
+      425: {
+        slidesPerView: 3,
+      }
     },
   };
 };
@@ -83,12 +78,25 @@ const peopleSwiper = (wrap: HTMLElement) => {
   });
 
   const renderPagination = () => {
+    const SLIDES_PER_BULLET = 4;
     const swiperLength = swiper.slides.length;
+    const bulletsCount = Math.ceil(swiperLength / SLIDES_PER_BULLET);
+
     let elements = [];
-    for(let i = 0; i < swiperLength; i++) {
-      elements.push(<div data-index={i} className={`custom-pagination-bullet${i === swiper.realIndex ? " active" : ''}`} onClick={() => {handleChange(i)}}></div>)
-    }
-    
+    for (let i = 0; i < bulletsCount; i++) {
+      const targetSlideIndex = i * SLIDES_PER_BULLET;
+      elements.push(
+      <div
+        data-index={targetSlideIndex}
+        className={`custom-pagination-bullet${
+          Math.floor(swiper.realIndex / SLIDES_PER_BULLET) === i ? " active" : ""
+        }`}
+        onClick={() => { handleChange(targetSlideIndex); }}
+      ></div>
+    );
+  }
+  
+    pagination.innerHTML = '';
     bullets = [];
     
     elements.forEach((element) => {

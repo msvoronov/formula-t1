@@ -1,13 +1,13 @@
-<section class="section block-accordion{{#if classNames}} {{classNames}}{{/if}}" id="faq">
+<section class="section block-accordion" id="faq">
     <div class="container">
-      <h2 class="section__title">{{title}}</h2>
+      <h2 class="section__title block-accordion__title">{{title}}</h2>
         <div class="block-accordion__wrap">
             {{#each list}}
                 {{#> accordion/accord classNameAccord="block-accordion__accord" isOpen=isOpen}}
                     {{#> accordion/accord__head classNameAccordHead="block-accordion__trigger"}}
-                        <div class="block-accordion__trigger__text">
+                        <p class="block-accordion__trigger__text">
                             {{label}}
-                        </div>
+                        </p>
                         <div class="block-accordion__trigger__cross accord__cross"></div>
                     {{/accordion/accord__head}}
                     {{#> accordion/accord__body }}

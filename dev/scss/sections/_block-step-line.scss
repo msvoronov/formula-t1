@@ -1,105 +1,115 @@
 .block-step-line {
+  @include bg-color(#151515);
+  @include color(#fff);
 
-  @include media-max-sm() {
-    display: none;
+  &__title {
+    margin: 80px 0 64px;
   }
+
   &__wrap {
-    padding: 145px 0
-
+    padding: 0 168px 8px;
   }
+  
+  &__row {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 38fr 24fr 38fr;
+    margin-bottom: 48px;
+    padding: 24px 0;
+    @include transition(color);
 
-  &__line {
-    @include size(100%);
-    @include flex(row);
-    padding: 3px 4px;
-    border-radius: 32px;
-    background: linear-gradient(101.44deg, #0033A5 0%, #2D88EA 20.5%, #3EC9FB 43.86%, #C99BE7 67.53%, #6B74D0 95.35%);
+    &__date {
+      @include font-size(1.6rem, 32px, 500);
+      letter-spacing: -0.02em;
+      margin: 0 auto;
+    }
 
-    &__bullet-wrap {
-      @include size(100%);
-      @include max-size(100%);
-      @include position(relative);
-      @include flex();
-      
-      &__bullet{
-        @include size(24px, 24px);
-        @include bg-color(#9AE7FE);
-        @include border(#FFFFFF33, 1.5px, solid);
+    &__point {
+      width: 32px;
+      height: 32px;
+      background-color: #F4F4F4;
+      border-radius: 50%;
+      margin: 0 auto;
+      position: relative;
+      @include transition(background-color);
 
-        @include transition(background-color);
-        outline: #FFFFFF33 solid 1.5px;
-        
-        border-radius: 50%;
-        
-        @include hover {
-          @include bg-color(#E5F9FF);
+      &::after {
+        content: "";
+        @include position(absolute, $bottom: -96px, $left: 50%);
+        @include bg-color(#F4F4F4);
+        transform: translate(-50%, 0%);
+        width: 1px;
+        height: 64px;
+      }
+    }
 
-          .block-step-line__line__bullet-wrap__info-wrap-hover {
-            opacity: 1;
-          }
-          .block-step-line__line__bullet-wrap__info-wrap__title {
-            @include color(#00AAE6)
-          }
-        }
+    &:last-child &__point::after {
+      display: none;
+    }
+
+    &__text {
+      position: relative;
+
+      &__title {
+        @include font-size(2.4rem, 48px, 500);
+        letter-spacing: -0.04em;
       }
 
-      &:nth-child(even) {
-        .block-step-line__line__bullet-wrap__info-wrap {
-          @include position(absolute, $left: 0, $bottom: calc(100% + 23px))
-          
-        }
-        .block-step-line__line__bullet-wrap__info-wrap-hover {
-                    @include position(absolute, $left: 0, $top: calc(100% + 23px))
-        }
-      }
-      &:nth-child(odd) {
-        .block-step-line__line__bullet-wrap__info-wrap {
-          @include position(absolute, $left: 0, $top: calc(100% + 23px))
-          
-        }
-        .block-step-line__line__bullet-wrap__info-wrap-hover {
-          @include position(absolute, $left: 0, $bottom: calc(100% + 23px))
-          
-        }
-      }
-
-      &__info-wrap {
-        &__title {
-          @include font-size(1rem, 1.4, 500);
-          @include transition(color);
-          margin-bottom: 4px;
-        }
-        &__date {
-          @include font-size(0.8rem, 1.4, 500);
-
-        }
-      }
-
-      &__info-wrap-hover {
-        pointer-events: none;
-        @include max-size(calc(100% - 23px));
-        @include bg-color($gray-light-2);
-        @include font-size(0.7rem, 1.4, 500);
-
-        @include transition(opacity);
+      &__info {
         opacity: 0;
-
-        border-radius: 8px;
-
-        padding: 16px;
-
-        &__date {
-          @include color(#8496A8);
+        visibility: hidden;
+        position: absolute;
+        top: calc(100% + 24px);
+        left: 0px;
+        z-index: 5;
+        background-color: #1DAFF7;
+        padding: 20px;
+        width: 31vw;
+        @include transition(opacity);
+        
+        &__stage {
+          @include font-size(1.0rem, 28px, 400);
+          letter-spacing: -0.02em;
+          color: #BAE4FD;
+          margin-bottom: 16px;
+        }
+        &__title {
+          @include font-size(1.2rem, 28px, 500);
+          letter-spacing: -0.02em;
+          color: #fff;
           margin-bottom: 8px;
         }
-        &__title {
-          @include color(#000);
-          margin-bottom: 4px;
-        }
         &__descr {
-          @include color(#8496A8);
+          @include font-size(1.0rem, 28px, 400);
+          letter-spacing: -0.02em;
+          color: #fff;
+
+          & + ul {
+            & li {
+              @include font-size(1.0rem, 28px, 400);
+              letter-spacing: -0.02em;
+              color: #fff;
+              margin-top: 14px;
+              position: relative;
+              left: 20px;
+            }
+          }
         }
       }
+    }
+
+    &:hover {
+      color: #1DAFF7;
+
+      & .block-step-line__row__point {
+        background-color: #1DAFF7;
+      }
+
+      & .block-step-line__row__text__info {
+        opacity: 1;
+        visibility: visible;
+      }
+
     }
   }
 }

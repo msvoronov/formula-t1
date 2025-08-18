@@ -172,32 +172,29 @@
 
   .custom-pagination {
     @include size(100%);
-    @include flex(row, center, center, $gap: 12px);
+    @include flex(row, center, center, $gap: 8px);
 
     @include transition(all, 0.1s);
 
-    margin-top: 24px;
+    margin-top: 50px;
     
     @include media-max-s() {
       margin-top: 16px;
-      
     }
 
     .custom-pagination-bullet {
-      @include size(8px, 8px);
-      @include bg-color(#382323, 0.2);
+      @include size(64px, 2px);
+      @include bg-color(#EBEBEB);
       @include transition(#{background-color, opacity});
-
-      border-radius: 50%;
 
       cursor: pointer;
 
       &.active {
-        @include bg-color(#000000, 1);
+        @include bg-color(#62636B);
       }
       
       @include hover() {
-        @include bg-color(#000000, 1);
+        @include bg-color(#62636B);
       }
     }
   }

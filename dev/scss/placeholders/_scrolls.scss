@@ -1,15 +1,12 @@
 %custom-srollbar-y {
   @extend %overflow-scroll-y;
 
-  // scrollbar-width: thin;
-
   &::-webkit-scrollbar {
-    @include size(6px);
+    @include size(4px);
   }
 
   &::-webkit-scrollbar-thumb {
-    @include bg-color(#D2D8DF);
-    border-radius: 3px;
+    @include bg-color(#2A2D30);
   }
 }
 
