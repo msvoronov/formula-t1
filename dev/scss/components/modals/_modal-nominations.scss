@@ -5,7 +5,7 @@
   }
 
   &__title {
-    @include font-size(1.6rem, 32px, 500);
+    @include font-size(32px, 32px, 500);
     letter-spacing: -0.02em;
     padding: 48px 32px 0;
     margin-bottom: 16px;
@@ -14,12 +14,12 @@
   &__content {
     padding: 32px;
     @extend %custom-srollbar-y;
-    @include max-size(null, 500px);
+    @include max-size(null, 545px);
   }
 
   &__categories {
     &__subtitle {
-      @include font-size(1.2rem, 28px, 500);
+      @include font-size(24px, 28px, 500);
       letter-spacing: -0.02em;
       margin-bottom: 24px;
     }
@@ -32,7 +32,7 @@
     &__category {
       position: relative;
       left: 30px;
-      @include font-size(1.0rem, 28px, 400);
+      @include font-size(20px, 28px, 400);
       letter-spacing: -0.02em;
       word-break: break-word;
     }
@@ -48,11 +48,11 @@
       }
       &__name {
         margin-bottom: 12px;
-        @include font-size(1.0rem, 24px, 500);
+        @include font-size(20px, 24px, 500);
         letter-spacing: -0.02em;
       }
       &__text {
-        @include font-size(0.8rem, 24px, 400);
+        @include font-size(16px, 24px, 400);
         letter-spacing: -0.01em;
       }
     }
@@ -60,7 +60,7 @@
 
   &__info {
     &__subtitle {
-      @include font-size(1.0rem, 24px, 500);
+      @include font-size(20px, 24px, 500);
       letter-spacing: -0.02em;
       border: 1px solid #FA4A14;
       padding: 16px 0;
@@ -81,14 +81,14 @@
     }
 
     &__item {
-      @include font-size(1.0rem, 28px, 400);
+      @include font-size(20px, 28px, 400);
       letter-spacing: -0.02em;
     }
   }
  
   &__criteria {
     &__subtitle {
-      @include font-size(1.2rem, 28px, 500);
+      @include font-size(24px, 28px, 500);
       letter-spacing: -0.02em;
       margin-bottom: 24px;
     }
@@ -117,7 +117,7 @@
       margin-bottom: 16px;
     }
     &__percentage {
-      @include font-size(1.6rem, 32px, 500);
+      @include font-size(32px, 32px, 500);
       letter-spacing: -0.02em;
       margin-bottom: 6px;
 
@@ -126,7 +126,7 @@
       }
     }
     &__descr {
-      @include font-size(0.8rem, 24px, 400);
+      @include font-size(16px, 24px, 400);
       letter-spacing: -0.01em;
     }
   }  
@@ -138,7 +138,7 @@
   }
 
   &__button {
-    @include font-size(0.9rem, 26px, 500);
+    @include font-size(18px, 26px, 500);
     padding: 10px 24px;
   }
 }

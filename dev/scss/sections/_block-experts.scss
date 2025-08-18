@@ -4,8 +4,16 @@
   padding: 80px 4px;
 
   &__title {
-    @include font-size(3.2rem, 64px, 500);
+    @include font-size(64px, 64px, 500);
     letter-spacing: -0.04em;
     margin-bottom: 64px;
+
+    @media (max-width: 1280px) {
+      @include font-size(48px, 48px, 500);
+    }
+
+    @media (max-width: 760px) {
+      @include font-size(24px, 24px, 500);
+    }
   }
 }

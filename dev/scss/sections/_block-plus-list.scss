@@ -4,13 +4,22 @@
   padding: 80px 0;
   
   &__title {
-    @include font-size(3.2rem, 64px, 500);
+    @include font-size(64px, 64px, 500);
     letter-spacing: -0.04em;
     margin-bottom: 52px;
+
+    @media (max-width: 1280px) {
+      @include font-size(48px, 48px, 500);
+    }
+
+    @media (max-width: 760px) {
+      @include font-size(24px, 24px, 500);
+    }
+    
   }
 
   &__wrap {
-    @include flex($gap: 28px);
+    @include flex($gap: 40px);
     
     @include media-max-md() {
       @include flex(column, $gap: 0);
@@ -36,7 +45,15 @@
     }
 
     &__text {
-      @include font-size(1.2rem, 28px, 500);
+      @include font-size(24px, 28px, 500);
+      max-width: 600px;
+
+      @media (max-width: 1280px) {
+        max-width: 540px;
+      }
+      @include media-max-md() {
+        max-width: none;
+      }
     }
   }
 }

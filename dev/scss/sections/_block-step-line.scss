@@ -3,7 +3,16 @@
   @include color(#fff);
 
   &__title {
+    @include font-size(64px, 64px, 500);
     margin: 80px 0 64px;
+
+    @media (max-width: 1280px) {
+      @include font-size(48px, 48px, 500);
+    }
+
+    @media (max-width: 760px) {
+      @include font-size(24px, 24px, 500);
+    }
   }
 
   &__wrap {
@@ -19,7 +28,7 @@
     @include transition(color);
 
     &__date {
-      @include font-size(1.6rem, 32px, 500);
+      @include font-size(32px, 32px, 500);
       letter-spacing: -0.02em;
       margin: 0 auto;
     }
@@ -51,7 +60,7 @@
       position: relative;
 
       &__title {
-        @include font-size(2.4rem, 48px, 500);
+        @include font-size(48px, 48px, 500);
         letter-spacing: -0.04em;
       }
 
@@ -68,25 +77,25 @@
         @include transition(opacity);
         
         &__stage {
-          @include font-size(1.0rem, 28px, 400);
+          @include font-size(20px, 28px, 400);
           letter-spacing: -0.02em;
           color: #BAE4FD;
           margin-bottom: 16px;
         }
         &__title {
-          @include font-size(1.2rem, 28px, 500);
+          @include font-size(24px, 28px, 500);
           letter-spacing: -0.02em;
           color: #fff;
           margin-bottom: 8px;
         }
         &__descr {
-          @include font-size(1.0rem, 28px, 400);
+          @include font-size(20px, 28px, 400);
           letter-spacing: -0.02em;
           color: #fff;
 
           & + ul {
             & li {
-              @include font-size(1.0rem, 28px, 400);
+              @include font-size(20px, 28px, 400);
               letter-spacing: -0.02em;
               color: #fff;
               margin-top: 14px;

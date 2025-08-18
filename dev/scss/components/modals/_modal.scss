@@ -43,12 +43,9 @@
     &-content {
         @include position(relative);
         @include size(100%);
-        @include max-size(33.7rem, 100%);
+        @include max-size(674px, 100%);
         @include bg-color(#fff);
         @include flex(column);
-
-
-
         margin: auto;
         border-radius: 20px;
 

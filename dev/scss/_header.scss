@@ -23,7 +23,7 @@
       margin-left: auto;
 
       &__item {
-        @include font-size(0.8rem, 1.4, 500);
+        @include font-size(16px, 24px, 500);
         color: #fff;
         @include transition(color);
 

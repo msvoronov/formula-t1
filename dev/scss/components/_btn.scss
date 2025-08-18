@@ -1,16 +1,12 @@
 .btn {
-  @include font-size(1rem, 1.4, 500);
-
+  @include font-size(20px, 28px, 500);
   @include bg-color($blue);
   @include color(#fff);
-
   @include transition(background-color);
   
   padding: 8px 24px;
-  text-align: center;
-  
+  text-align: center;  
   border-radius: 60px;
-
   cursor: pointer;
 
   @include hover() {
@@ -54,7 +50,7 @@
   &-outline {
     @include flex(row, center, center);
     @include size(100px, 46px);
-    @include font-size(0.8rem, 1.4, 500);
+    @include font-size(18px, 26px, 500);
     @include bg-color(transparent);
     border: 1px solid #fff;
     border-radius: 100px;

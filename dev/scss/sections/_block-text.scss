@@ -10,11 +10,23 @@
     gap: 28px;
   }
   &__left {
-    @include font-size(3.2rem, 1.0, 500);
+    @include font-size(64px, 64px, 500);
     letter-spacing: -0.04em;
+
+    @media (max-width: 1280px) {
+      @include font-size(48px, 48px, 500);
+    }
+
+    @media (max-width: 760px) {
+      @include font-size(24px, 24px, 500);
+    }
   }
   &__right {
-    @include font-size(1.0rem, 28px, 400);    
+    @include font-size(20px, 28px, 400);    
     letter-spacing: -0.02em;
+
+    @media (max-width: 760px) {
+      @include font-size(18px, 18px, 500);
+    }
   }
 }
