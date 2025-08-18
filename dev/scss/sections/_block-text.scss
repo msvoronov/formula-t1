@@ -13,10 +13,12 @@
     @include font-size(64px, 64px, 500);
     letter-spacing: -0.04em;
 
-    @media (max-width: 1280px) {
+    @media (min-width: 1600px) {
+      letter-spacing: -2.5px;
+    }
+    @media (max-width: 1380px) {
       @include font-size(48px, 48px, 500);
     }
-
     @media (max-width: 760px) {
       @include font-size(24px, 24px, 500);
     }

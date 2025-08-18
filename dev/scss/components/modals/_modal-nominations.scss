@@ -14,7 +14,7 @@
   &__content {
     padding: 32px;
     @extend %custom-srollbar-y;
-    @include max-size(null, 545px);
+    height: 545px;
   }
 
   &__categories {
@@ -133,7 +133,7 @@
   
   &__button-wrap {
     @include flex(row, flex-end);
-    @include border(1px, solid, $gray, top);
+    @include border(1px, solid, #62636B, top);
     padding: 16px 32px;
   }
 

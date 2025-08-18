@@ -65,6 +65,11 @@
       span {
         padding-left: 5px;
       }
+
+      &:hover {
+        background-color: #008ACD;
+        @include transition(all);
+      }
     }
   }
 }

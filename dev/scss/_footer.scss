@@ -13,6 +13,21 @@
 
     &__buttons {
       @include flex(row, $gap: 28px);
+
+      a {
+        border: 1px solid #fff;
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          border-color: #1DAFF7;
+          @include transition(all);
+        }
+      }
     }    
   }
 }

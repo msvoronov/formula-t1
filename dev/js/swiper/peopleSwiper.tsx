@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { Pagination, Navigation } from 'swiper/modules';
+import { Mousewheel, Navigation } from 'swiper/modules';
 import { SwiperOptions } from "swiper/types/swiper-options";
 import React from "js/libs/React";
 
@@ -37,7 +37,8 @@ const getOptions = (): SwiperOptions => {
       clickable: true,
       el: ".swiper-pagination",
     },
-    modules: [Navigation],
+    modules: [Navigation, Mousewheel],
+    mousewheel: true,
     breakpoints: {
       768: {
         slidesPerView: 4,

@@ -1,7 +1,7 @@
 .block-experts {
   @include bg-color(#323232);
   @include color(#fff);
-  padding: 80px 4px;
+  padding: 80px 0;
 
   &__title {
     @include font-size(64px, 64px, 500);

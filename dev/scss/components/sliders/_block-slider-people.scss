@@ -1,5 +1,7 @@
 .block-slider-people {
   &__item {
+    padding-right: 14px;
+
     &__img {
       @include image-wrap(100%, 100%, contain);      
       width: 120px;
