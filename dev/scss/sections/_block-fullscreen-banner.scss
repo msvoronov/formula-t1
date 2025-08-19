@@ -2,6 +2,7 @@
   position: relative;
   z-index: 4;
   margin-top: -78px;
+  @include bg-color(#000);
 
   &__wrap {
     @include position(relative);
@@ -26,7 +27,7 @@
     @include flex(column);
     @include size(100%, 100%);
     
-    padding: 143px 32px 98px;
+    padding: 143px 0 98px;
     z-index: 1;    
     
     @include media-max-md() {

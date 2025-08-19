@@ -1,11 +1,7 @@
 .header {
   @include position(sticky, $top: 0);
-  @include max-size(3000px);
-  @include min-size(null, 70px);
   @include transition(box-shadow);
   background-color: transparent;
-  margin: 0 auto;
-  padding: 0 32px;
   z-index: 10;
   
   &.scroll {
@@ -14,7 +10,10 @@
   }
 
   &__wrap {
-    padding: 16px 0;
+    @include max-size(1440px);
+    @include min-size(null, 70px);
+    margin: 0 auto;
+    padding: 16px 32px;
     @include flex(row, null, center, 38px);
 
     &__nav {
