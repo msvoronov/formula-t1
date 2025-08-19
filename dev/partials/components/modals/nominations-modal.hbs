@@ -73,7 +73,11 @@
         {{/if}}
       </div>
       <div class="modal-nominations__button-wrap">
-        <a href="{{href}}" class="btn btn-blue modal-nominations__button {{#if btnClass}} {{btnClass}}{{/if}}">{{btnLabel}}</a>
+        {{#if isNominationClosed}}      
+          <button class="btn btn-blue modal-nominations__button js-close-modal {{#if btnClass}} {{btnClass}}{{/if}}" data-target="{{id}}">{{btnLabel}}</button>
+        {{else}}
+          <a href="{{href}}" class="btn btn-blue modal-nominations__button {{#if btnClass}} {{btnClass}}{{/if}}">{{btnLabel}}</a>
+        {{/if}}
       </div>
     </div>
     {{/components/modal-wrap}}
