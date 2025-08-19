@@ -40,6 +40,8 @@
   }
 
   &__subtitle {
+    max-width: 540px;
+
     &__text {
       @include font-size(20px, 28px, 500);
       letter-spacing: -0.02em; 
