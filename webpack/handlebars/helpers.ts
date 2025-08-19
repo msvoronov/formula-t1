@@ -14,7 +14,7 @@ export const initHelpers = (settings: TSettings) => {
     const { pathDev } = settings;
 
     const getImgTag = (tag: any, path: string, alt?: string) => {
-        return `<img ${tag}="/assets/${path}" alt="${
+        return `<img ${tag}="assets/${path}" alt="${
             alt ? alt : "image"
         }">`;
     };
