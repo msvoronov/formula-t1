@@ -2,7 +2,7 @@
   @include flex(column);
   @include bg-color(#151515);
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 80px 0;
 
   &__top {    
     @include flex(row, space-between);
